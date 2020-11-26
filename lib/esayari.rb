@@ -1,3 +1,7 @@
+require 'net/http'
+require 'json'
+require 'expanded_date'
+
 require "esayari/version"
 require "esayari/client"
 
