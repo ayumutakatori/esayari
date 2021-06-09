@@ -45,5 +45,13 @@ module Esayari
 
       @http.post(path, JSON.generate(params), @headers)
     end
+
+    def search_posts(team_path, query, sort: nil, order: nil)
+      path = "/v1/teams/#{team_path}/posts?q=#{query}" if query
+      path = "#{path}&sort:#{sort}" if sort
+      path = "#{path}&order:#{order}" if order
+
+      @http.get(path, @headers)
+    end
   end
 end
